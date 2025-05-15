@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Standards Layer Explorer BETA</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="/static/bsi_new.ico">
+    <link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Host+Grotesk:ital,wght@0,300..800;1,300..800&family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+
+
+</head>
+<body>
+<header class="header-3">
+<!--    <p>*This is a test environment designed to gather feedback on functionality by the Office for Product Safety and Standards staff only.-->
+<!--The information and results should not be relied upon and it is the responsibility of users to undertake further research before using the information given.-->
+<!--</p>-->
+
+</header>
+<!-- Main Content -->
+<main>
+    {% block content %}
+    <!-- Add this line inside the main tag where you want the Dash DataTable to appear -->
+    <div style="height: 2450px; width: 100%; margin-left: auto; margin-right: auto;">
+    <iframe src="{{ dash_url }}" style="width:100%; height:100%; border:none"></iframe>
+    </div>
+    {% endblock %}
+
+</main>
+<p style="margin-left: 5px;"><strong>Last Updated - July 2024</strong></p>
+<p style="margin-left: 5px;">Please note, we will endeavour to provide ongoing updates of the tool and the data set. Please always check the bottom of the tool to understand when the data set was last updated.</p>
+</body>
+</html>
+

@@ -1,0 +1,13 @@
+/* removes the veritcal scroll bar for the page */
+body {
+  width: 99vw;
+  margin: 0;
+  padding: 0;
+  overflow-y: hidden;
+}
+
+.graph-shadow {
+    box-shadow: 3px 3px 5px 3px grey;
+    overflow: visible;
+    border: 2px solid gray;
+}

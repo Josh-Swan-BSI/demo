@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Standards Layer Explorer</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="/static/bsi_new.ico">
+    <link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+
+</head>
+<body>
+
+<!-- Header 1 -->
+<header class="header-1">
+    <div class="logo-container">
+        <!-- Add your logo image here -->
+        <img src="{{ url_for('static', filename='bsi_new.png') }}" alt="BSI Logo" width="70" height="60"/>
+    </div>
+    <nav>
+        <ul>
+            <li><a href="{{ url_for('standards') }}">Standards</a></li>
+            <li><a href="{{ url_for('services') }}">Services</a></li>
+            <li><a href="{{ url_for('sectors') }}">Sectors</a></li>
+            <li><a href="{{ url_for('topics') }}">Topics</a></li>
+            <li><a href="{{ url_for('about') }}">About</a></li>
+        </ul>
+    </nav>
+</header>
+
+<!-- Header 2 -->
+<header class="header-2">
+    <h1>Standards Explorer*</h1>
+    <p>*This is a test environment designed to gather feedback on functionality by the Office for Product Safety and Standards staff only.
+The information and results should not be relied upon and it is the responsibility of users to undertake further research before using the information given.
+</p>
+
+</header>
+
+<!-- Main Content -->
+<main>
+    {% block content %}
+    <!-- Add this line inside the main tag where you want the Dash DataTable to appear -->
+    <div style="height: 2450px; width: 100%; margin-left: auto; margin-right: auto;">
+    <iframe src="{{ dash_url }}" style="width:100%; height:100%; border:none"></iframe>
+    </div>
+
+
+    <h2 style="margin:30px">Using the Standards Explorer and Layer Explorer Tools</h2>
+    <div class="main-content" style="margin:30px">
+    <div class="flex-container">
+        <div class="text-container">
+            <h3>Lookup Table</h3>
+            <p>
+                The lookup table can be used to discover the metadata of Designated standards and all types of references.
+                Checking the row boxes on the left-hand side will load the standard into the Layer Explorer tool on the
+                right. Please note only designated standards can currently be loaded into the Layer Explorer.
+                The global search will search all pages and cells and will highlight what it finds. If search is pressed,
+                it will filter the rows to just display the relevant content. This search is case-insensitive and also
+                can search for more than one term using a comma separating the terms. Pressing clear will remove all
+                search terms, checked boxes and blue-highlighted cells.
+            </p>
+        </div>
+        <div class="image-container">
+            <img src="{{ url_for('static', filename='global_search_example.png') }}"
+                 alt="Picture 1" class="picture" width="500" height="100" style="margin-top: 63px; margin-left: 50px">
+        </div>
+    </div>
+    <div class="flex-container">
+        <div class="text-container">
+            <p>
+                Each column has its own filter box to allow more specific filtering. The user has the option to switch
+                between case-sensitive and case-insensitive, and by default they are set to be case-sensitive. As well
+                as searching text, other commands can be used here:
+            </p>
+            <h4>Date Searching Examples</h4>
+            <ul>
+                <li>Equals: =2005-12-12</li>
+                <li>Newer than: >2005-12-12</li>
+                <li>Equal or newer than: >=2005-12-12</li>
+                <li>Older than: <2005-12-12</li>
+                <li>Equal or older than: <=2005-12-12</li>
+            </ul>
+
+        </div>
+<!--        <div class="image-container">-->
+<!--            <img src="{{ url_for('static', filename='picture2.jpg') }}" alt="Picture 2" class="picture" width="100" height="500">-->
+<!--        </div>-->
+    </div>
+    <div class="flex-container">
+        <div class="text-container">
+            <br>
+            <h3>Layer Explorer</h3>
+            <p>
+                The Layer Explorer allows to investigate the relionship between designated standards, their references,
+                and the references of the references. The tool is powered by the datatable and can load multiple
+                designated standard 'trees' into the display window. To discover metadata of the plot points, hover your
+                mouse over a point. The chart comes equipped with some controls in the top right corner which allows
+                the user to do the following:
+            </p>
+            <ul>
+                <li>Download a png of the plot in its current view</li>
+                <li>Zoom - draw a box area to zoom into (can also be done with mouse wheel)</li>
+                <li>Panning - which allows the image to be moved around</li>
+                <li>Box select - for highlight points in a box area</li>
+                <li>Lasso select - for highlight points in a freeform area</li>
+                <li>Zoom in/out</li>
+                <li>Autoscale - sizes the graph to fit all plots in an ideal view</li>
+                <li>Reset axis - resets the graph to the default view</li>
+            </ul>
+        </div>
+    </div>
+    </div>
+
+    {% endblock %}
+
+</main>
+</body>
+<footer class="footer">
+        <div class="logo">
+            <img src="{{ url_for('static', filename='royal_charter.png') }}" alt="Royal Charter" width="70" height="70"/>
+        </div>
+    </footer>
+</html>

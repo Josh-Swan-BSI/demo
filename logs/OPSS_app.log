@@ -1,0 +1,23 @@
+2024-10-29 09:43:23,837 ERROR: An error occurred: 500 Internal Server Error: The server encountered an internal error and was unable to complete your request. Either the server is overloaded or there is an error in the application. [in C:\repos\OPSS_DevOps\main.py:43]
+Traceback (most recent call last):
+  File "C:\Users\swanj\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 1455, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\swanj\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 869, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\swanj\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 865, in full_dispatch_request
+    rv = self.preprocess_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\swanj\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 1239, in preprocess_request
+    rv = self.ensure_sync(before_func)()
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\swanj\AppData\Local\Programs\Python\Python312\Lib\site-packages\dash\dash.py", line 1411, in _setup_server
+    _validate.validate_layout(self.layout, self._layout_value())
+  File "C:\Users\swanj\AppData\Local\Programs\Python\Python312\Lib\site-packages\dash\_validate.py", line 451, in validate_layout
+    _validate(layout_value)
+  File "C:\Users\swanj\AppData\Local\Programs\Python\Python312\Lib\site-packages\dash\_validate.py", line 438, in _validate
+    _validate_id(component)
+  File "C:\Users\swanj\AppData\Local\Programs\Python\Python312\Lib\site-packages\dash\_validate.py", line 428, in _validate_id
+    raise exceptions.DuplicateIdError(
+dash.exceptions.DuplicateIdError: Duplicate component id found in the initial layout: `table`

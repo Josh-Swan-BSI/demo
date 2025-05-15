@@ -123,11 +123,14 @@ def load_data():
         print("Error loading data: ", e)
         return [pd.DataFrame(), pd.DataFrame()]
 
-#RUN THE APP,
-if __name__ == "__main__": # <-- don't do this on the python anywhere!
-    data = load_data()
-    df = data[0]
-    references = data[1]
+# Load data on import (Render needs this to happen always)
+data = load_data()
+df = data[0]
+references = data[1]
 
-    dash_app = dashboard(app, df, references, routes="/dash/")
-    app.run(debug=True, port=5001) # this line is only enabled on localhost testing
+# Mount Dash app
+dash_app = dashboard(app, df, references, routes="/dash/")
+
+# Only run Flask server when testing locally
+if __name__ == "__main__":
+    app.run(debug=True, port=5001)
